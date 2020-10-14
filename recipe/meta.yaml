@@ -1,5 +1,5 @@
 {% set name = "jupyterlab_iframe" %}
-{% set version = "0.2.2" %}
+{% set version = "0.2.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 7c26cddc5f29f0b5ac6ba4707ce811f9787282549d22098b691bcdcc6692238c
+  sha256: 8231bbbabeb06d7602ceae7cd8bcf34e1ebb63a4b512b925b5fd24be02ab3af1
 
 build:
   number: 0
   noarch: python
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -35,7 +35,7 @@ about:
   license: Apache-2.0
   license_family: Apache
   license_file: LICENSE
-  summary: 'IFrame widgets for JupyterLab'
+  summary: IFrame widgets for JupyterLab
 
   description: |
     IFrame widgets for JupyterLab
