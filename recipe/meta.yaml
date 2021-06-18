@@ -1,5 +1,5 @@
 {% set name = "jupyterlab_iframe" %}
-{% set version = "0.3.1" %}
+{% set version = "0.4.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: dbba9a73552e2a8267be9a5e60ba7ce33e0b28d9ebc16789fb442403e26a2cfb
+  sha256: 49871dd426d27a7a9b795ed1ad168931c140affe5a81c7eedb040e8eee53460e
 
 build:
   number: 0
