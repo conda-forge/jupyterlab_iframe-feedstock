@@ -1,11 +1,11 @@
-About jupyterlab_iframe
-=======================
+About jupyterlab_iframe-feedstock
+=================================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/jupyterlab_iframe-feedstock/blob/main/LICENSE.txt)
 
 Home: http://github.com/timkpaine/jupyterlab_iframe
 
 Package license: Apache-2.0
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/jupyterlab_iframe-feedstock/blob/main/LICENSE.txt)
 
 Summary: IFrame widgets for JupyterLab
 
