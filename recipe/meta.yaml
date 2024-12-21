@@ -6,17 +6,17 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 01d729a12470aa9d1878f337a712d6f12065d5cefbd134b6d4e8e80c429eefa7
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - pip
     - nodejs >=16
     - yarn
@@ -24,12 +24,14 @@ requirements:
     - hatch-jupyter-builder
     - jupyterlab >=4,<5
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - jupyterlab >=4,<5
     - requests >=2.22.0
     - tornado-proxy-handlers >=0.0.5
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - jupyterlab_iframe
 
