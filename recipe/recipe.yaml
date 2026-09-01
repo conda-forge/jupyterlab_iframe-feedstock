@@ -1,0 +1,55 @@
+schema_version: 1
+
+context:
+  name: jupyterlab_iframe
+  version: "0.5.0"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
+  sha256: 01d729a12470aa9d1878f337a712d6f12065d5cefbd134b6d4e8e80c429eefa7
+
+build:
+  number: 2
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - pip
+    - nodejs >=16
+    - yarn
+    - hatchling
+    - hatch-jupyter-builder
+    - jupyterlab >=4,<5
+  run:
+    - python >=${{ python_min }}
+    - jupyterlab >=4,<5
+    - requests >=2.22.0
+    - tornado-proxy-handlers >=0.0.5
+
+tests:
+  - python:
+      imports:
+        - jupyterlab_iframe
+      pip_check: false
+      python_version:
+        - ${{ python_min }}
+        - "*"
+
+about:
+  license: Apache-2.0
+  license_file: LICENSE
+  summary: IFrame widgets for JupyterLab
+  description: |
+    IFrame widgets for JupyterLab
+  homepage: http://github.com/timkpaine/jupyterlab_iframe
+  repository: https://github.com/timkpaine/jupyterlab_iframe
+
+extra:
+  recipe-maintainers:
+    - timkpaine
